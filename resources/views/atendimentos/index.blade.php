@@ -10,9 +10,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Email</th>
+                <th>Paciente</th>
+                <th>Médico</th>
+                <th>Horário do Atendimento</th>
                 <th>Ações</th>
             </tr>
         </thead>
