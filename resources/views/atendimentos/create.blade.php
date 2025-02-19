@@ -54,10 +54,10 @@
                 <button type="submit" class="btn btn-primary mx-1">Salvar</button>
                 <a href="{{ route('atendimentos.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
-        
-            </form>
+
+        </form>
     </div>
 
 
-  
+
 @endsection
