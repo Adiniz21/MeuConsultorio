@@ -16,6 +16,10 @@ class Atendimento extends Model
         'paciente_id'
     ];
 
+    protected $casts = [
+        'data_atendimento' => 'datetime',
+    ];
+
     // Relacionamentos
     public function medico()
     {

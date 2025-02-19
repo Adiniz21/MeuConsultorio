@@ -6,6 +6,7 @@ use App\Models\Atendimento;
 use App\Models\Medico;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AtendimentoController extends Controller
 {

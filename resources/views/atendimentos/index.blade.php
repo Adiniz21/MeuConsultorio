@@ -22,7 +22,7 @@
                 <td>{{ $atendimento->id }}</td>
                 <td>{{ $atendimento->paciente->nome }}</td>
                 <td>{{ $atendimento->medico->nome }}</td>
-                <td>{{ $atendimento->data_atendimento }}</td>
+                <td>{{ $atendimento->data_atendimento->format('d/m/Y H:i') }}</td>
                 <td>
                     <a class="btn btn-sm btn-info" href="{{ route('atendimentos.show', $atendimento->id) }}">Ver</a>
                     <a class="btn btn-sm btn-warning" href="{{ route('atendimentos.edit', $atendimento->id) }}">Editar</a>
