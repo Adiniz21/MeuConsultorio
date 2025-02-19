@@ -33,7 +33,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="crm" class="form-label">CRM</label>
+                <label for="crm" class="form-label">CRM (Ex: 123456/SP)</label>
                 <input 
                     type="text"
                     name="crm"

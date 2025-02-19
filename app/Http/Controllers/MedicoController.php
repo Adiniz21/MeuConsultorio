@@ -20,16 +20,24 @@ class MedicoController extends Controller
 
     public function store(Request $request)
     {
+        $messages = [
+            'crm.regex' => 'O CRM deve estar no formato 000000/UF (6 dígitos, barra e 2 letras).',
+        ];
         $validatedData = $request->validate([
             'nome' => 'required|string|max:255',
-            'crm' => 'required|unique:medicos,crm',
+            'crm' => [
+                'required',
+                'unique:medicos,crm',
+                'regex:/^\d{6}\/[A-Za-z]{2}$/',
+            ],
             'especialidade' => 'required|string|max:255'
-        ]);
+        ], $messages);
 
         Medico::create($validatedData);
         return redirect()->route('medicos.index')
             ->with('success', 'Médico criado com sucesso!');
     }
+
 
     public function show($id)
     {
@@ -45,18 +53,27 @@ class MedicoController extends Controller
 
     public function update(Request $request, $id)
     {
+        $messages = [
+            'crm.regex' => 'O CRM deve estar no formato 000000/UF (6 dígitos, barra e 2 letras).',
+        ];
         $medico = Medico::findOrFail($id);
 
         $validatedData = $request->validate([
             'nome' => 'required|string|max:255',
-            'crm' => 'required|unique:medicos,crm,' . $id,
+            'crm' => [
+                'required',
+                // ignora o ID atual na verificação de uniqueness
+                "unique:medicos,crm,{$id}",
+                'regex:/^\d{6}\/[A-Za-z]{2}$/',
+            ],
             'especialidade' => 'required|string|max:255'
-        ]);
+        ],$messages);
 
         $medico->update($validatedData);
         return redirect()->route('medicos.index')
             ->with('success', 'Médico atualizado com sucesso!');
     }
+
 
     public function destroy($id)
     {
