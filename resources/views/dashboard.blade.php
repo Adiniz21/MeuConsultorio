@@ -6,26 +6,26 @@
     {{-- Cards de estatísticas --}}
     <div class="row mb-4">
         <div class="col-md-4">
-            <div class="card text-bg-primary mb-3">
+            <div class="card mb-3" style="background-color: #003ca2;">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Pacientes</h5>
-                    <p class="display-5">{{ $totalPacientes }}</p>
+                    <h5 class="card-title text-light">Pacientes</h5>
+                    <p class="display-5 text-light">{{ $totalPacientes }}</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card text-bg-success mb-3">
+            <div class="card  mb-3" style="background-color: #4b67d5;">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Médicos</h5>
-                    <p class="display-5">{{ $totalMedicos }}</p>
+                    <h5 class="card-title text-light">Médicos</h5>
+                    <p class="display-5 text-light">{{ $totalMedicos }}</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card text-bg-warning mb-3">
+            <div class="card  mb-3" style="background-color: #628dc8;">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Atendimentos</h5>
-                    <p class="display-5">{{ $totalAtendimentos }}</p>
+                    <h5 class="card-title text-light">Atendimentos</h5>
+                    <p class="display-5 text-light">{{ $totalAtendimentos }}</p>
                 </div>
             </div>
         </div>

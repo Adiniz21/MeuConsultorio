@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1 class="mb-4">Editar medico #{{ $medico->id }}</h1>
+    <h1 class="mb-4">Editar Médico #{{ $medico->id }}</h1>
 
     <div class="border border-black rounded mb-2 p-4">
         {{-- Exibe erros de validação, caso existam --}}

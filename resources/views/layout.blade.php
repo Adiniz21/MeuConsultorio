@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="background-color: #fffeee;">
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light " style="background-color: #3259c4;">
         <div class="container-fluid">
 
             <!-- Botão que abre a Offcanvas (apenas no mobile) -->
@@ -18,18 +18,18 @@
             </button>
 
             <!-- Logo / Marca -->
-            <a class="navbar-brand ms-2" href="/">Meu Consultório</a>
+            <a class="navbar-brand ms-2 fw-semibold" href="/">Meu Consultório</a>
 
             <!-- Menu visível apenas em telas grandes (desktop) -->
             <ul class="navbar-nav ms-auto d-none d-lg-flex flex-row">
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="{{ route('pacientes.index') }}">Pacientes</a>
+                    <a class="nav-link text-light" href="{{ route('pacientes.index') }}">Pacientes</a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="{{ route('medicos.index') }}">Médicos</a>
+                    <a class="nav-link text-light" href="{{ route('medicos.index') }}">Médicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('atendimentos.index') }}">Atendimentos</a>
+                    <a class="nav-link text-light" href="{{ route('atendimentos.index') }}">Atendimentos</a>
                 </li>
             </ul>
 
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="container mt-4">
+    <div class="container mt-4" >
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
