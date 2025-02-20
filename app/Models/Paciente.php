@@ -39,5 +39,22 @@ class Paciente extends Model
             'medico_id'     // chave estrangeira em 'atendimentos'
         );
     }
+
+    public function getCpfMaskAttribute()
+    {
+        // Remove qualquer caractere que não seja dígito
+        $cpfLimpo = preg_replace('/\D/', '', $this->cpf);
+
+        // Se tiver 11 dígitos, formata
+        if (strlen($cpfLimpo) === 11) {
+            return substr($cpfLimpo, 0, 3).'.'.
+                   substr($cpfLimpo, 3, 3).'.'.
+                   substr($cpfLimpo, 6, 3).'-'.
+                   substr($cpfLimpo, 9, 2);
+        }
+
+        // Se não tiver 11 dígitos, apenas retorna como está
+        return $this->cpf;
+    }
 }
 

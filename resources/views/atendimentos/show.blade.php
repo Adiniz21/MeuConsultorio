@@ -31,7 +31,7 @@
                     {{ $atendimento->paciente->nome ?? 'N/A' }}
                 </p>
                 <p><strong>CPF:</strong>
-                    {{ $atendimento->paciente->cpf ?? 'N/A' }}
+                    {{ $atendimento->paciente->cpf_mask ?? 'N/A' }}
                 </p>
                 <p><strong>E-mail:</strong>
                     {{ $atendimento->paciente->email ?? 'N/A' }}

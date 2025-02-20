@@ -9,7 +9,6 @@
                 <tr>
                     <th>Data Atendimento</th>
                     <th>Paciente</th>
-                    <th>ID Atendimento</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -18,7 +17,6 @@
                     <tr>
                         <td>{{ $atendimento->data_atendimento->format('d/m/Y H:i') }}</td>
                         <td>{{ $atendimento->paciente->nome ?? 'N/A' }}</td>
-                        <td>{{ $atendimento->paciente->cpf ?? 'N/A' }}</td>
                         <td> <a class="btn btn-sm btn-info"
                                 href="{{ route('atendimentos.show', $atendimento->id) }}?origin=relatorio&medico_id={{ $medico->id }}">
                                 Mais Informações
