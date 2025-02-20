@@ -11,9 +11,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>CPF</th>
                 <th>Email</th>
-                <th>Data Nascimento</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -22,9 +20,7 @@
             <tr>
                 <td>{{ $paciente->id }}</td>
                 <td>{{ $paciente->nome }}</td>
-                <td>{{ $paciente->cpf }}</td>
                 <td>{{ $paciente->email }}</td>
-                <td>{{ $paciente->data_nascimento }}</td>
                 <td>
                     <a class="btn btn-sm btn-info" href="{{ route('pacientes.show', $paciente->id) }}">Ver</a>
                     <a class="btn btn-sm btn-warning" href="{{ route('pacientes.edit', $paciente->id) }}">Editar</a>
@@ -41,4 +37,7 @@
             @endforeach
         </tbody>
     </table>
+    <div class="mt-3 d-flex justify-content-center">
+        {{ $pacientes->links('pagination::bootstrap-5') }}
+    </div>
 @endsection

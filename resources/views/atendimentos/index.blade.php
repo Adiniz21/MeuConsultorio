@@ -39,4 +39,7 @@
             @endforeach
         </tbody>
     </table>
+    <div class="mt-3 d-flex justify-content-center">
+        {{ $atendimentos->links('pagination::bootstrap-5') }}
+    </div>
 @endsection

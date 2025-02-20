@@ -17,6 +17,10 @@ class Paciente extends Model
         'email'
     ];
 
+    protected $casts = [
+        'data_nascimento' => 'datetime',
+    ];
+
     // Um paciente tem vários atendimentos
     public function atendimentos()
     {

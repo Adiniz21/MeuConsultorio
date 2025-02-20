@@ -13,7 +13,7 @@ class AtendimentoController extends Controller
     public function index()
     {
         // Pode carregar médico e paciente para exibir na listagem
-        $atendimentos = Atendimento::with(['medico', 'paciente'])->get();
+        $atendimentos = Atendimento::with(['medico', 'paciente'])->paginate(13);
         return view('atendimentos.index', compact('atendimentos'));
     }
 

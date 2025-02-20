@@ -9,7 +9,7 @@ class MedicoController extends Controller
 {
     public function index()
     {
-        $medicos = Medico::paginate(15);
+        $medicos = Medico::paginate(13);
         return view('medicos.index', compact('medicos'));
     }
 
@@ -90,7 +90,7 @@ class MedicoController extends Controller
 
         $atendimentos = $medico->atendimentos()
             ->with('paciente')
-            ->paginate(15);
+            ->paginate(13);
 
         return view('relatorios.atendimentos-por-medico', compact('medico', 'atendimentos'));
     }
