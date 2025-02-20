@@ -9,7 +9,7 @@ class MedicoController extends Controller
 {
     public function index()
     {
-        $medicos = Medico::all();
+        $medicos = Medico::paginate(15);
         return view('medicos.index', compact('medicos'));
     }
 
@@ -67,7 +67,7 @@ class MedicoController extends Controller
                 'regex:/^\d{6}\/[A-Za-z]{2}$/',
             ],
             'especialidade' => 'required|string|max:255'
-        ],$messages);
+        ], $messages);
 
         $medico->update($validatedData);
         return redirect()->route('medicos.index')
@@ -83,4 +83,16 @@ class MedicoController extends Controller
         return redirect()->route('medicos.index')
             ->with('success', 'Médico excluído com sucesso!');
     }
+
+    public function relatorioAtendimentos($id)
+    {
+        $medico = Medico::findOrFail($id);
+
+        $atendimentos = $medico->atendimentos()
+            ->with('paciente')
+            ->paginate(15);
+
+        return view('relatorios.atendimentos-por-medico', compact('medico', 'atendimentos'));
+    }
+
 }

@@ -18,4 +18,7 @@ Route::resource('atendimentos', AtendimentoController::class);
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/relatorios/medico/{medico}', [MedicoController::class, 'relatorioAtendimentos'])
+     ->name('relatorios.medico');
+
 
